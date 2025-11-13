@@ -79,21 +79,20 @@ fun Route.taskRoutes() {
     /**
      * POST /tasks - Add new task
      * Dual-mode: HTMX fragment or PRG redirect
-     */
+     */ 
     post("/tasks") {
         val title = call.receiveParameters()["title"].orEmpty().trim()
 
+        // Validation
         if (title.isBlank()) {
-            // Validation error handling
             if (call.isHtmx()) {
                 val error = """<div id="status" hx-swap-oob="true" role="alert" aria-live="assertive">
                     Title is required. Please enter at least one character.
                 </div>"""
                 return@post call.respondText(error, ContentType.Text.Html, HttpStatusCode.BadRequest)
             } else {
-                // No-JS: redirect back (could add error query param)
-                call.response.headers.append("Location", "/tasks")
-                return@post call.respond(HttpStatusCode.SeeOther)
+                // No-JS path: redirect with error flag (handle in GET if needed)
+                return@post call.respondRedirect("/tasks?error=required")
             }
         }
 
@@ -104,10 +103,10 @@ fun Route.taskRoutes() {
             val fragment = """<li id="task-${task.id}">
                 <span>${task.title}</span>
                 <form action="/tasks/${task.id}/delete" method="post" style="display: inline;"
-                      hx-post="/tasks/${task.id}/delete"
-                      hx-target="#task-${task.id}"
-                      hx-swap="outerHTML">
-                  <button type="submit" aria-label="Delete task: ${task.title}">Delete</button>
+                    hx-post="/tasks/${task.id}/delete"
+                    hx-target="#task-${task.id}"
+                    hx-swap="outerHTML">
+                <button type="submit" aria-label="Delete task: ${task.title}">Delete</button>
                 </form>
             </li>"""
 
@@ -116,10 +115,9 @@ fun Route.taskRoutes() {
             return@post call.respondText(fragment + status, ContentType.Text.Html, HttpStatusCode.Created)
         }
 
-        // No-JS: POST-Redirect-GET pattern (303 See Other)
-        call.response.headers.append("Location", "/tasks")
-        call.respond(HttpStatusCode.SeeOther)
+        call.respondRedirect("/tasks") // No-JS fallback
     }
+
 
     /**
      * POST /tasks/{id}/delete - Delete task
@@ -136,10 +134,9 @@ fun Route.taskRoutes() {
             return@post call.respondText(status, ContentType.Text.Html)
         }
 
-        // No-JS: POST-Redirect-GET pattern (303 See Other)
-        call.response.headers.append("Location", "/tasks")
-        call.respond(HttpStatusCode.SeeOther)
+        call.respondRedirect("/tasks")
     }
+
 
     // TODO: Week 7 Lab 1 Activity 2 Steps 2-5
     // Add inline edit routes here
@@ -148,3 +145,6 @@ fun Route.taskRoutes() {
     // - POST /tasks/{id}/edit - Save edits with validation (dual-mode)
     // - GET /tasks/{id}/view - Cancel edit (HTMX only)
 }
+
+fun ApplicationCall.isHtmx(): Boolean =
+    request.headers["HX-Request"]?.equals("true", ignoreCase = true) == true
