@@ -13,7 +13,7 @@ Short peer interviews (5-10 minutes) to understand task manager needs and identi
 
 ## What You'll Do
 
-I'll ask 3-5 questions about task management experiences. Brief notes only. **No recordings** unless you explicitly agree.
+I'll ask 6 questions about task management experiences. Brief notes only. **No recordings** unless you explicitly agree.
 
 ## Data Collected
 
@@ -48,16 +48,21 @@ Before starting, I will ask:
 - [ ] Consent to participate?
 
 **Verbal consent sufficient**. If yes, I'll note:
-- Date/time: [YYYY-MM-DD HH:MM]
-- Pseudonym: [e.g., "Participant A"]
-- Consent confirmed: [Initials]
+- Date/time: 2025/11/20 15:00
+- Pseudonym: "Participant A"
+- Consent confirmed: KV
+
+**Verbal consent sufficient**. If yes, I'll note:
+- Date/time: 2025/11/20 15:30
+- Pseudonym: "Participant B"
+- Consent confirmed: CL
 
 ---
 
 ## Opt-Out Process
 
 If you change your mind:
-1. Email: [your-university-email]
+1. Email: wvtf3312@leeds.ac.uk
 2. Include: interview date + pseudonym
 3. I'll delete notes within 48 hours
 4. Confirm deletion via email
@@ -67,7 +72,7 @@ If you change your mind:
 ## Contact
 
 **Researcher**: Leon Tipton, wvtf3312@leeds.ac.uk
-**Module Lead**: Dr. [Name], [module-email]
+**Module Lead**: Dr. Amy Brereton, A.M.Brereton@leeds.ac.uk
 **University Ethics**: ethics@leeds.ac.uk
 
 ---
