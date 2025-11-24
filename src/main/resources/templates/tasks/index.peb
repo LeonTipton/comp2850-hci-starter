@@ -27,21 +27,7 @@
   </form>
 </section>
 
-{# Task List - Week 6 (inline, no partials) #} {# TODO: Week 7 Lab 1 Activity 2
-Step 4 Update this section to use conditional includes: - Add {% if editingId
-and editingId == task.id %} check - Include tasks/_edit.peb when editing -
-Include tasks/_item.peb when viewing - See mdbook for full implementation #}
-<section aria-labelledby="list-heading">
-  <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
-  <ul id="task-list">
-    {% for task in tasks %} {% if editingId and editingId == task.id %} {%
-    include "tasks/_edit.peb" with {"task": task, "error": errorMessage} %} {%
-    else %} {% include "tasks/_item.peb" with {"task": task} %} {% endif %} {%
-    empty %}
-    <li>No tasks yet. Add one above!</li>
-    {% endfor %}
-  </ul>
-</section>
+{# Task List - Week 6 (inline, no partials) #}
 <!-- <section aria-labelledby="list-heading">
   <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
   {# Minor Issue: Image without alt text for Week 7 Lab 2 discovery #}
@@ -62,4 +48,20 @@ Include tasks/_item.peb when viewing - See mdbook for full implementation #}
     {% endfor %}
   </ul>
 </section> -->
+
+{# TODO: Week 7 Lab 1 Activity 2 Step 4 Update this section to use conditional
+includes: - Add {% if editingId and editingId == task.id %} check - Include
+tasks/_edit.peb when editing - Include tasks/_item.peb when viewing - See mdbook
+for full implementation #}
+<section aria-labelledby="list-heading">
+  <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
+  <ul id="task-list">
+    {% for task in tasks %} {% if editingId and editingId == task.id %} {%
+    include "tasks/_edit.peb" with {"task": task, "error": errorMessage} %} {%
+    else %} {% include "tasks/_item.peb" with {"task": task} %} {% endif %} {%
+    empty %}
+    <li>No tasks yet. Add one above!</li>
+    {% endfor %}
+  </ul>
+</section>
 {% endblock %}
