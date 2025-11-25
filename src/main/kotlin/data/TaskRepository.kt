@@ -92,6 +92,8 @@ object TaskRepository {
     // - fun find(id: Int): Task?
     // - fun update(task: Task)
 
+    fun get(id: Int): Task? = tasks.find { it.id == id
+
     private fun persist() {
         file.writeText("id,title\n" + tasks.joinToString("\n") { "${it.id},${it.title}" })
     }

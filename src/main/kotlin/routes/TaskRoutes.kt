@@ -197,10 +197,9 @@ fun Route.taskRoutes() {
         }
 
         if (call.isHtmx()) {
-            // HTMX: Return updated view mode + status
-            val item = call.renderTemplate("tasks/_item.peb", mapOf("task" to updated))
-            val status = """<div id="status" hx-swap-oob="true">Task updated to "${updated.title}".</div>"""
-            call.respondText(item + status, ContentType.Text.Html)
+            val html = call.renderTemplate("tasks/_item.peb", mapOf("task" to task))
+            val status = """<div id="status" hx-swap-oob="true">Task "${task.title}" added successfully.</div>"""
+            return@post call.respondText(html + status, ContentType.Text.Html, HttpStatusCode.Created)
         } else {
             // No-JS: PRG redirect
             call.respondRedirect("/tasks")
