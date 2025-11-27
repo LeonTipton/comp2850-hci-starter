@@ -1,6 +1,7 @@
 # Job Stories — Week 6 Needs-Finding
 
 ## Story S1: Contrast
+
 **Situation**: When I'm using dark mode
 **Motivation**: I want content readability to improve
 **Outcome**: So I'm not forced to use light mode
@@ -14,6 +15,7 @@
 ---
 
 ## Story S2: Confirmation Feedback
+
 **Situation**: When I submit a form (add/edit/delete task)
 **Motivation**: I want immediate, explicit confirmation that the action succeeded either verbally or through a readable popup
 **Outcome**: So I can trust the completeness of my action
@@ -27,6 +29,7 @@
 ---
 
 ## Story S3: Visibility in direct sunlight
+
 **Situation**: When I'm viewing tasks
 **Motivation**: I want a way to change contrast
 **Outcome**: So I can easily interact with the interface
@@ -40,6 +43,7 @@
 ---
 
 ## Story S4: Priority
+
 **Situation**: When I'm deciding which task to complete next
 **Motivation**: I want a way to easily find high importance tasks or tasks with a close deadine
 **Outcome**: So I can ensure that I am keeping on top of high priority tasks within an appropriate timeframe
@@ -48,11 +52,12 @@
 **Evidence**: Participant A (notes Q3), Participant B (notes Q3)
 **Inclusion risk**: Missed deadlines, Stress, Screenreader
 **Type**: Job story
-**WCAG**: N/A
+**WCAG**: N/A\[Add Tasks 4-5 as needed\]
 
 ---
 
 ## Story S5: Understandable
+
 **Situation**: When I'm trying to (add/read/edit) tasks
 **Motivation**: I want to achieve this without difficulty
 **Outcome**: So I can use a task manager and know with certainty that the tasks I have added are definitely there and readable
