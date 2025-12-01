@@ -52,7 +52,7 @@
 **Evidence**: Participant A (notes Q3), Participant B (notes Q3)
 **Inclusion risk**: Missed deadlines, Stress, Screenreader
 **Type**: Job story
-**WCAG**: N/A\[Add Tasks 4-5 as needed\]
+**WCAG**: N/A
 
 ---
 
